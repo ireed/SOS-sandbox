@@ -256,7 +256,7 @@ script:
     - ./autogen.sh
     - ./configure --prefix=$PWD/install
     - make install
-    - oshrun -np 2 ./oshmem_test exec --task=data
+    - oshrun -np 2 $PWD/intall/oshmem_test exec --task=data
     - make clean
 
     ###
