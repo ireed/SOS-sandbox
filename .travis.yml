@@ -254,7 +254,7 @@ script:
     - export MELLANOX_TESTS_DIR=$TRAVIS_SRC/tests-mellanox
     - cd $MELLANOX_TESTS_DIR/verifier
     - ./autogen.sh
-    - configure --prefix=$PWD/install
+    - ./configure --prefix=$PWD/install
     - make install
     - oshrun -np 2 ./oshmem_test exec --task=data
     - make clean
