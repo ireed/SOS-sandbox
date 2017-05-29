@@ -255,11 +255,8 @@ script:
     - cd $MELLANOX_TESTS_DIR/verifier
     - ./autogen.sh
     - ./configure --prefix=$PWD/install
-    - which oshcc
-    - which oshrun
-    - ls ../; pwd
     - make install
-    - oshrun -np 2 $PWD/intall/oshmem_test exec --task=data
+    - oshrun -np 2 $PWD/intall/bin/oshmem_test exec --task=data
     - make clean
 
     ###
