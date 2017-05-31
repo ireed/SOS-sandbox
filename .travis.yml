@@ -259,7 +259,9 @@ script:
     - make install
     - make oshmem_test
     - find ../ -name "*liboshmem_basic_tc3.a*"
+    - find ../ -name "oshmem_test"
     - oshrun -np 2 $PWD/intall/bin/oshmem_test exec --task=data
+    - oshrun -np 2 ./oshmem_test exec --task=data
     - make clean
 
     ###
