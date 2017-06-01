@@ -253,12 +253,14 @@ script:
     - export PATH=$TRAVIS_INSTALL/sandia-shmem-ofi/bin:$TRAVIS_INSTALL/hydra/bin:$BASE_PATH
     - export MELLANOX_TESTS_DIR=$TRAVIS_SRC/tests-mellanox
     - cd $MELLANOX_TESTS_DIR/verifier
+    - export SMA_SYMMETRIC_SIZE='4G'
+    - export SHMEM_SYMMETRIC_SIZE='4G'
     - ./autogen.sh
     - ./configure --prefix=$PWD/install CC=oshcc
     - make clean
     - make install
     - make oshmem_test
-    - oshrun -np 2 $PWD/install/bin/oshmem_test exec --task=all
+    - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=all
     - make clean
 
     ###
