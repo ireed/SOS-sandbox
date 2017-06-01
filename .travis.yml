@@ -261,9 +261,9 @@ script:
     - make install
     - make oshmem_test
     - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=data
-    - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=reduce
-    - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=sync
-    - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=stride
+    - travis_wait 30 oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=reduce
+    - travis_wait oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=sync
+    - travis_wait oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=stride
     - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=mix
     - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=analysis
     - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=nbi
