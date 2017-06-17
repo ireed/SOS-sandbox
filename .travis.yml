@@ -260,18 +260,18 @@ script:
     - make clean
     - make install
     - make oshmem_test
-    - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=data
-#    - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=reduce
     - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=sync
     - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=stride
     - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=mix
-    - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=analysis
     - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=nbi
     - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=misc
     - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=atomic
-    - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=coll
     - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=lock
+    - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=analysis
     - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=basic
+    - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=data
+    - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=coll
+#    - oshrun -np 4 $PWD/install/bin/oshmem_test exec --task=reduce
     - make clean
 
     ###
