@@ -119,7 +119,7 @@ before_install:
     # Fetch Mellanox Tests
     - cd $TRAVIS_SRC
 #    - git clone --depth 10 https://github.com/openshmem-org/tests-mellanox.git tests-mellanox
-    - git clone --depth 10 https://github.com/ireed/tests-mellanox.git tests-mellanox
+    - git clone --depth 10 https://github.com/ireed/tests-mellanox-sandbox.git tests-mellanox
 
     ## Fetch ISx
     - cd $TRAVIS_SRC
